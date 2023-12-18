@@ -1,0 +1,12 @@
+version: "3"
+services:
+  gitcache:
+    container_name: gitcache
+    image: gitcache
+    build: ../build
+    environment:
+      GITCACHE_LISTEN: 0.0.0.0:8080
+      GITCACHE_GITSOURCE_URL: https://github.com/codersanjeev/learn-git.git
+    ports:
+      - "0.0.0.0:8080:8080"
+    restart: unless-stopped
